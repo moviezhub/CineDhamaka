@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🎬 Movie Download Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+
+  <!-- Header -->
+  <header class="bg-gray-800 p-6 text-center shadow-md">
+    <h1 class="text-3xl font-bold text-yellow-400">🎬 Movie Download Hub</h1>
+    <p class="text-gray-300">Download HD Movies in One Click - Fast & Safe</p>
+    <!-- Nav Buttons -->
+    <div class="mt-4 flex justify-center gap-4">
+      <button onclick="showModal('termsModal')" class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded text-sm">📜 Terms & Conditions</button>
+      <a href="#" class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded text-sm">📞 Contact Us</a>
+      <a href="#" class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded text-sm">🔐 Privacy Policy</a>
+    </div>
+  </header>
+
+  <!-- Top Google Ad (replace with your AdSense script) -->
+  <div class="w-full flex justify-center p-4">
+    <div class="bg-yellow-100 text-black text-center px-6 py-3 rounded shadow-md w-full max-w-2xl">
+      <strong>🔸 Ad Banner:</strong> Your AdSense code goes here.
+      <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
+    </div>
+  </div>
+
+  <!-- Movie Grid -->
+  <main class="p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+
+    <!-- Movie Card -->
+    <div class="bg-gray-800 rounded-2xl shadow-lg overflow-hidden">
+      <img src="https://via.placeholder.com/300x450.png?text=Movie+1" alt="Movie 1 Poster" class="w-full h-64 object-cover">
+      <div class="p-4">
+        <h2 class="text-xl font-semibold mb-1">Movie Title 1</h2>
+        <p class="text-sm text-gray-300 mb-3">Thriller story packed with suspense & action.</p>
+        <a href="https://example.com/download-movie1" class="bg-yellow-500 text-black px-4 py-2 rounded hover:bg-yellow-600 transition">⬇️ Download</a>
+      </div>
+    </div>
+
+    <!-- Copy and edit for other 9 movie cards... -->
+
+  </main>
+
+  <!-- Middle Ad -->
+  <div class="w-full flex justify-center p-4">
+    <div class="bg-yellow-100 text-black text-center px-6 py-3 rounded shadow-md w-full max-w-2xl">
+      <strong>🔸 Sponsored Ad:</strong> This can be your mid-page AdSense code.
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-center p-6 text-gray-400 mt-6">
+    &copy; 2025 Movie Download Hub | Powered by Tailwind CSS
+  </footer>
+
+  <!-- Terms & Conditions Modal -->
+  <div id="termsModal" class="fixed inset-0 bg-black bg-opacity-60 hidden items-center justify-center z-50">
+    <div class="bg-white text-black w-full max-w-lg p-6 rounded shadow-lg relative">
+      <button onclick="hideModal('termsModal')" class="absolute top-2 right-2 text-xl">✖️</button>
+      <h2 class="text-xl font-bold mb-2">📜 Terms & Conditions</h2>
+      <p class="text-sm mb-2">
+        - This website does not host any files on its own server.<br>
+        - All content is linked from third-party services and public sites.<br>
+        - Downloading copyrighted content is your own responsibility.<br>
+        - We strongly advise using a VPN while browsing or downloading.
+      </p>
+      <button onclick="hideModal('termsModal')" class="mt-4 bg-yellow-500 px-4 py-2 rounded hover:bg-yellow-600">Got it</button>
+    </div>
+  </div>
+
+  <!-- Modal Script -->
+  <script>
+    function showModal(id) {
+      document.getElementById(id).classList.remove('hidden');
+      document.getElementById(id).classList.add('flex');
+    }
+    function hideModal(id) {
+      document.getElementById(id).classList.remove('flex');
+      document.getElementById(id).classList.add('hidden');
+    }
+  </script>
+
+</body>
+</html>
