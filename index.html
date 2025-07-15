@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>🎬 Movie Download Hub</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
 <body class="bg-gray-900 text-white font-sans">
 
@@ -12,67 +17,74 @@
   <header class="bg-gray-800 p-6 text-center shadow-md">
     <h1 class="text-3xl font-bold text-yellow-400">🎬 Movie Download Hub</h1>
     <p class="text-gray-300">Download HD Movies in One Click - Fast & Safe</p>
-    <!-- Nav Buttons -->
-    <div class="mt-4 flex justify-center gap-4">
-      <button onclick="showModal('termsModal')" class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded text-sm">📜 Terms & Conditions</button>
-      <a href="#" class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded text-sm">📞 Contact Us</a>
-      <a href="#" class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded text-sm">🔐 Privacy Policy</a>
-    </div>
   </header>
 
-  <!-- Top Google Ad (replace with your AdSense script) -->
+  <!-- Top Google Ad -->
   <div class="w-full flex justify-center p-4">
     <div class="bg-yellow-100 text-black text-center px-6 py-3 rounded shadow-md w-full max-w-2xl">
       <strong>🔸 Ad Banner:</strong> Your AdSense code goes here.
-      <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
     </div>
   </div>
 
   <!-- Movie Grid -->
   <main class="p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-
-    <!-- Movie Card -->
+    <!-- Movie Template -->
+    <!-- Repeat this block 10 times with your movie details -->
     <div class="bg-gray-800 rounded-2xl shadow-lg overflow-hidden">
       <img src="https://via.placeholder.com/300x450.png?text=Movie+1" alt="Movie 1 Poster" class="w-full h-64 object-cover">
       <div class="p-4">
         <h2 class="text-xl font-semibold mb-1">Movie Title 1</h2>
-        <p class="text-sm text-gray-300 mb-3">Thriller story packed with suspense & action.</p>
+        <p class="text-sm text-gray-300 mb-3">An action thriller packed with suspense and drama.</p>
         <a href="https://example.com/download-movie1" class="bg-yellow-500 text-black px-4 py-2 rounded hover:bg-yellow-600 transition">⬇️ Download</a>
       </div>
     </div>
-
-    <!-- Copy and edit for other 9 movie cards... -->
-
+    <!-- End Template -->
   </main>
 
   <!-- Middle Ad -->
   <div class="w-full flex justify-center p-4">
     <div class="bg-yellow-100 text-black text-center px-6 py-3 rounded shadow-md w-full max-w-2xl">
-      <strong>🔸 Sponsored Ad:</strong> This can be your mid-page AdSense code.
+      <strong>🔸 Sponsored Ad:</strong> Your mid-page AdSense code here.
     </div>
   </div>
 
   <!-- Footer -->
-  <footer class="bg-gray-800 text-center p-6 text-gray-400 mt-6">
-    &copy; 2025 Movie Download Hub | Powered by Tailwind CSS
+  <footer class="bg-gray-800 text-center text-gray-400 px-4 py-6">
+    <div class="text-sm space-x-4 mb-2">
+      <a href="#" onclick="showModal('termsModal')" class="hover:text-yellow-400">📜 Terms & Conditions</a>
+      <a href="mailto:cinezone78@gmail.com" class="hover:text-yellow-400">📞 Contact Us</a>
+      <a href="#" onclick="showModal('privacyModal')" class="hover:text-yellow-400">🔐 Privacy Policy</a>
+    </div>
+    <p>&copy; 2025 Movie Download Hub | All rights reserved</p>
   </footer>
 
-  <!-- Terms & Conditions Modal -->
+  <!-- Terms Modal -->
   <div id="termsModal" class="fixed inset-0 bg-black bg-opacity-60 hidden items-center justify-center z-50">
     <div class="bg-white text-black w-full max-w-lg p-6 rounded shadow-lg relative">
       <button onclick="hideModal('termsModal')" class="absolute top-2 right-2 text-xl">✖️</button>
-      <h2 class="text-xl font-bold mb-2">📜 Terms & Conditions</h2>
+      <h2 class="text-xl font-bold mb-2">Terms & Conditions</h2>
       <p class="text-sm mb-2">
-        - This website does not host any files on its own server.<br>
-        - All content is linked from third-party services and public sites.<br>
-        - Downloading copyrighted content is your own responsibility.<br>
-        - We strongly advise using a VPN while browsing or downloading.
+        By using this website, you agree to our terms. We do not host any files; all movies are shared via third-party links.
+        We are not responsible for copyright issues. Use this website at your own risk.
       </p>
-      <button onclick="hideModal('termsModal')" class="mt-4 bg-yellow-500 px-4 py-2 rounded hover:bg-yellow-600">Got it</button>
+      <button onclick="hideModal('termsModal')" class="mt-4 bg-yellow-500 px-4 py-2 rounded hover:bg-yellow-600">Close</button>
     </div>
   </div>
 
-  <!-- Modal Script -->
+  <!-- Privacy Policy Modal -->
+  <div id="privacyModal" class="fixed inset-0 bg-black bg-opacity-60 hidden items-center justify-center z-50">
+    <div class="bg-white text-black w-full max-w-lg p-6 rounded shadow-lg relative">
+      <button onclick="hideModal('privacyModal')" class="absolute top-2 right-2 text-xl">✖️</button>
+      <h2 class="text-xl font-bold mb-2">Privacy Policy</h2>
+      <p class="text-sm mb-2">
+        We respect your privacy. This website does not collect personal data. Third-party advertisers may use cookies to personalize ads.
+        By continuing to use our site, you accept our privacy terms.
+      </p>
+      <button onclick="hideModal('privacyModal')" class="mt-4 bg-yellow-500 px-4 py-2 rounded hover:bg-yellow-600">Close</button>
+    </div>
+  </div>
+
+  <!-- JS for Modals -->
   <script>
     function showModal(id) {
       document.getElementById(id).classList.remove('hidden');
